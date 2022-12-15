@@ -4,7 +4,6 @@ from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.config import Config
 kivy.require('2.1.0')
-from kivy.uix.dropdown import DropDown
 Config.set('graphics', 'resizable', True)
 
 class MyApp(App):
