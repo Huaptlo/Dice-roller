@@ -13,6 +13,7 @@ class MyApp(App):
     def build(self):
         Fl = FloatLayout()
         dropdown = DropDown()
+
         for index in range(7):
             btn1 = Button(text ='Value % d' % index, size_hint_y = None, height = 40)
             btn1.bind(on_release = lambda btn: dropdown.select(btn.text))
@@ -22,13 +23,14 @@ class MyApp(App):
                             background_color =(.3, .6, .7, 1), pos_hint ={'x':.1, 'y':.6})
         mainbutton.bind(on_release = dropdown.open)
         dropdown.bind(on_select = lambda instance, x: setattr(mainbutton, 'text', x))
-        runTouchApp(mainbutton)
         
         btn2 = Button(text ='Amount', size_hint =(.3, .3),
                      background_color =(.3, .6, .7, 1),
                     pos_hint ={'x':.6, 'y':.6 })
-        
-        Fl.add_widget(btn1,btn2)
+
+        Fl.add_widget(mainbutton) 
+        Fl.add_widget(btn2)
+
         return Fl
 
 if __name__ == "__main__":
