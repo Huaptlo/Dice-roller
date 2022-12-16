@@ -1,7 +1,7 @@
 import dice
 
-noppa = int(input("What dice: "))
-maara = int(input("How many dice: "))
-nopat = str(f'{maara}d{noppa}')
+dice_value = int(input("What dice: "))
+dice_amount = int(input("How many dice: "))
+dice_roll = str(f'{dice_amount}d{dice_value}')
 
-print(dice.roll(nopat))
+print(dice.roll(dice_roll))
