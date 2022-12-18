@@ -47,10 +47,10 @@ class MyApp(App):
 
             break
 
-        mainbutton = Button(text ='Dice', size_hint =(.3, .3),
+        main_btn = Button(text ='Dice', size_hint =(.3, .3),
                             background_color =(.3, .6, .7, 1), pos_hint ={'x':.1, 'y':.6})
-        mainbutton.bind(on_release = dropdown.open)
-        dropdown.bind(on_select = lambda instance, x: setattr(mainbutton, 'text', x))
+        main_btn.bind(on_release = dropdown.open)
+        dropdown.bind(on_select = lambda instance, x: setattr(main_btn, 'text', x))
         
         dice_amount_btn = Button(text ='Amount', size_hint =(.3, .3),
                     background_color =(.3, .6, .7, 1),
@@ -65,7 +65,7 @@ class MyApp(App):
                     font_size = 45,
                     size_hint = (.8,.15))
 
-        Fl.add_widget(mainbutton) 
+        Fl.add_widget(main_btn) 
         Fl.add_widget(dice_amount_btn)
         Fl.add_widget(roll_btn)
         Fl.add_widget(result_box)
