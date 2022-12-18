@@ -28,8 +28,15 @@ class MyApp(App):
                      background_color =(.3, .6, .7, 1),
                     pos_hint ={'x':.6, 'y':.6 })
 
+        btn3 = Button(text ='Roll', size_hint =(.3, .2),
+                     background_color =(.3, .6, .7, 1),
+                    pos_hint ={'x':.35, 'y':.35 })
+
+        # result_box = 
+
         Fl.add_widget(mainbutton) 
         Fl.add_widget(btn2)
+        Fl.add_widget(btn3)
 
         return Fl
 
