@@ -16,31 +16,31 @@ class MyApp(App):
         dropdown = DropDown()
 
         for index in range(7):
-            btn1 = Button(text ='D4', size_hint_y = None, height = 40,
+            btn1 = Button(text ='D4', size_hint_y = None, height = 30,
                     background_color =(.3, .6, .7, 1))
             btn1.bind(on_release = lambda btn: dropdown.select(btn.text))
 
-            btn2 = Button(text ='D6', size_hint_y = None, height = 40,
+            btn2 = Button(text ='D6', size_hint_y = None, height = 30,
                     background_color =(.3, .6, .7, 1))
             btn2.bind(on_release = lambda btn: dropdown.select(btn.text))
 
-            btn3 = Button(text ='D8', size_hint_y = None, height = 40,
+            btn3 = Button(text ='D8', size_hint_y = None, height = 30,
                     background_color =(.3, .6, .7, 1))
             btn3.bind(on_release = lambda btn: dropdown.select(btn.text))
 
-            btn4 = Button(text ='D10', size_hint_y = None, height = 40,
+            btn4 = Button(text ='D10', size_hint_y = None, height = 30,
                     background_color =(.3, .6, .7, 1))
             btn4.bind(on_release = lambda btn: dropdown.select(btn.text))
 
-            btn5 = Button(text ='D12', size_hint_y = None, height = 40,
+            btn5 = Button(text ='D12', size_hint_y = None, height = 30,
                     background_color =(.3, .6, .7, 1))
             btn5.bind(on_release = lambda btn: dropdown.select(btn.text))
 
-            btn6 = Button(text ='D20', size_hint_y = None, height = 40,
+            btn6 = Button(text ='D20', size_hint_y = None, height = 30,
                     background_color =(.3, .6, .7, 1))
             btn6.bind(on_release = lambda btn: dropdown.select(btn.text))
 
-            btn7 = Button(text ='D100', size_hint_y = None, height = 40,
+            btn7 = Button(text ='D100', size_hint_y = None, height = 30,
                     background_color =(.3, .6, .7, 1))
             btn7.bind(on_release = lambda btn: dropdown.select(btn.text))
 
@@ -55,20 +55,20 @@ class MyApp(App):
             break
 
         main_btn = Button(text ='Dice', size_hint =(.3, .2),
-                            background_color =(.3, .6, .7, 1), pos_hint ={'x':.1, 'y':.7})
+                            background_color =(.3, .6, .7, 1), pos_hint ={'x':.1, 'y':.5})
         main_btn.bind(on_release = dropdown.open)
         dropdown.bind(on_select = lambda instance, x: setattr(main_btn, 'text', x))
         
         dice_amount_btn = Button(text ='Amount', size_hint =(.3, .2),
                     background_color =(.3, .6, .7, 1),
-                    pos_hint ={'x':.6, 'y':.7 })
+                    pos_hint ={'x':.6, 'y':.5 })
 
-        roll_btn = Button(text ='Roll', size_hint =(.3, .2),
+        roll_btn = Button(text ='Roll', size_hint =(.5, .2),
                     background_color =(.3, .6, .7, 1),
-                    pos_hint ={'x':.35, 'y':.35 })
+                    pos_hint ={'x':.25, 'y':.2 })
 
         result_box = TextInput(text = "0",
-                    pos_hint = {'x':.1, 'y':.1},
+                    pos_hint = {'x':.1, 'y':.75},
                     font_size = 45,
                     size_hint = (.8,.15))
 
