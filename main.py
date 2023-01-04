@@ -1,5 +1,6 @@
 import kivy
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
@@ -72,17 +73,23 @@ class MyApp(App):
                     font_size = 45,
                     size_hint = (.8,.15))
 
-        exit_btn = Button(text = 'X', size_hint =(.05, .05),
+        self.close_btn = Button(text = 'X', size_hint =(.05, .05),
                     background_color =(.3, .6, .7, 1),
                     pos_hint ={'x':.9, 'y':.9})
+        self.close_btn.bind(on_release=self.close_app)
 
         Fl.add_widget(main_btn) 
         Fl.add_widget(dice_amount_btn)
         Fl.add_widget(roll_btn)
         Fl.add_widget(result_box)
-        Fl.add_widget(exit_btn)
+        Fl.add_widget(self.close_btn)
 
         return Fl
+
+    def close_app(self, instance):
+        App.get_running_app().stop()
+
+# Window.fullscreen = 'auto'
 
 if __name__ == "__main__":
     MyApp().run()
