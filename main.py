@@ -59,10 +59,22 @@ class MyApp(App):
                             background_color =(.3, .6, .7, 1), pos_hint ={'x':.1, 'y':.5})
         main_btn.bind(on_release = dropdown.open)
         dropdown.bind(on_select = lambda instance, x: setattr(main_btn, 'text', x))
-        
+
+        for index in range(11):
+            btn8 = Button(text ='%d' % index, size_hint_y = None, height = 30,
+                    background_color =(.3, .6, .7, 1))
+            btn8.bind(on_release = lambda btn: dropdown.select(btn.text))
+
+            dropdown.add_widget(btn8)
+
         dice_amount_btn = Button(text ='Amount', size_hint =(.3, .2),
-                    background_color =(.3, .6, .7, 1),
-                    pos_hint ={'x':.6, 'y':.5 })
+                            background_color =(.3, .6, .7, 1), pos_hint ={'x':.6, 'y':.5})
+        dice_amount_btn.bind(on_release = dropdown.open)
+        dropdown.bind(on_select = lambda instance, x: setattr(dice_amount_btn, 'text', x))
+        
+        # dice_amount_btn = Button(text ='Amount', size_hint =(.3, .2),
+        #             background_color =(.3, .6, .7, 1),
+        #             pos_hint ={'x':.6, 'y':.5 })
 
         roll_btn = Button(text ='Roll', size_hint =(.5, .2),
                     background_color =(.3, .6, .7, 1),
