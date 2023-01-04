@@ -10,7 +10,7 @@ from kivy.base import runTouchApp
 kivy.require('2.1.0')
 Config.set('graphics', 'resizable', True)
 
-class MyApp(App):
+class DiceRoller(App):
   
     def build(self):
         Fl = FloatLayout()
@@ -60,8 +60,8 @@ class MyApp(App):
         main_btn.bind(on_release = dropdown.open)
         dropdown.bind(on_select = lambda instance, x: setattr(main_btn, 'text', x))
 
-        for index in range(11):
-            btn8 = Button(text ='%d' % index, size_hint_y = None, height = 30,
+        for i in range(1,11):
+            btn8 = Button(text ='%d' % i, size_hint_y = None, height = 30,
                     background_color =(.3, .6, .7, 1))
             btn8.bind(on_release = lambda btn: dropdown.select(btn.text))
 
@@ -104,4 +104,4 @@ class MyApp(App):
 # Window.fullscreen = 'auto'
 
 if __name__ == "__main__":
-    MyApp().run()
+    DiceRoller().run()
