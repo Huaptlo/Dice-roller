@@ -13,10 +13,10 @@ class DiceRollerApp(App):
         # create a dropdown menu to choose the number of sides on the dice
         self.sides_dropdown = DropDown()
         for num_sides in (4, 6, 8, 10, 12, 20, 100):
-            btn = Button(text ='Dice', size_hint =(.3, .2), background_color =(.3, .6, .7, 1), pos_hint ={'x':.1, 'y':.5})
+            btn = Button(text ='Dice', size_hint =(.3, .2), background_color =(.3, .6, .7, 1))
             btn.bind(on_release=lambda btn: self.sides_dropdown.select(btn.text))
             self.sides_dropdown.add_widget(btn)
-        self.sides_button = Button(text="4", size_hint=(None, None))
+        self.sides_button = Button(text="4", size_hint=(.3, .2), pos_hint ={'x':.1, 'y':.5})
         self.sides_button.bind(on_release=self.sides_dropdown.open)
         self.sides_dropdown.bind(on_select=lambda instance, x: setattr(self.sides_button, 'text', x))
         self.layout.add_widget(self.sides_button)
@@ -24,10 +24,10 @@ class DiceRollerApp(App):
         # create a dropdown menu to choose the number of dice to roll
         self.dice_dropdown = DropDown()
         for num_dice in range(1, 11):
-            btn = Button(text ='Amount', size_hint =(.3, .2), background_color =(.3, .6, .7, 1), pos_hint ={'x':.6, 'y':.5 })
+            btn = Button(text ='Amount', size_hint =(.3, .2), background_color =(.3, .6, .7, 1))
             btn.bind(on_release=lambda btn: self.dice_dropdown.select(btn.text))
             self.dice_dropdown.add_widget(btn)
-        self.dice_button = Button(text="1", size_hint=(None, None))
+        self.dice_button = Button(text="1", size_hint=(.3, .2), pos_hint = {'x':.6, 'y':.5})
         self.dice_button.bind(on_release=self.dice_dropdown.open)
         self.dice_dropdown.bind(on_select=lambda instance, x: setattr(self.dice_button, 'text', x))
         self.layout.add_widget(self.dice_button)
