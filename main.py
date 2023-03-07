@@ -41,9 +41,11 @@ class DiceRoller(FloatLayout):
         self.result_label = Label(text='Result: ', size_hint=(0.9, 0.1), pos_hint={'x': 0.05, 'y': 0.3})
         self.add_widget(self.result_label)
 
+    # Function for the number of dice
     def update_num_dice(self, instance, value):
         self.num_dice_label.text = 'Number of Dice: ' + str(int(value))
 
+    # Function to roll the dice
     def roll_dice(self, instance):
         num_dice = int(self.num_dice_slider.value)
         dice_type = int(self.dice_type.text)
